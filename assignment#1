@@ -1,0 +1,27 @@
+acct_bal = int(input('what is your current account balance?')) 
+deposit = int(input('how much will you contribute every year'))
+cur_age = int(input('what current age will you start with'))
+ret_age = int(input('At what age will you retire'))
+
+salary = 60000
+rf_rate = 0.025
+match_rate = 0.05
+matching = 0
+
+# adding 14% anual return rate 
+annual_return_rate = 0.14
+
+
+
+for year in range(cur_age, ret_age):
+    salary *= 1 + rf_rate 
+    matching = salary * match_rate
+    acct_bal += deposit + matching
+
+# adding the annual return to the account balance
+acct_bal *= 1 + annual_return_rate
+
+
+print("Your account balance at retirement age is:", acct_bal)
+
+print("I can retire at age 50")
